@@ -17,7 +17,7 @@ private static Logger logger = LoggerFactory.getLogger(SecondServlet.class);
         PrintWriter out = resp.getWriter();
         out.printf("<html><body><h1>second servlet</h1></body></html>");
         out.close();
-        logger.info("secondservlet");
+        logger.info("SecondServlet");
     }
 }
 

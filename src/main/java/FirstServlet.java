@@ -24,6 +24,6 @@ private static Logger logger = LoggerFactory.getLogger(FirstServlet.class);
 
     @Override
     public void init() throws ServletException {
-        logger.info("firstservlet");
+        logger.info("FirstServlet");
     }
 }

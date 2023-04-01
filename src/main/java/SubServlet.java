@@ -9,23 +9,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "SumServlet", urlPatterns = "/sum")
-public class SumServlet extends HttpServlet {
-    private static Logger logger = LoggerFactory.getLogger(SumServlet.class);
+@WebServlet(name = "SubServlet", urlPatterns = "/sub")
+public class SubServlet extends HttpServlet {
 
-    // http://localhost:8080/java-ee/sum?a=1&b=1
+    private static Logger logger = LoggerFactory.getLogger(SubServlet.class);
+
+    // http://localhost:8080/java-ee/sub?a=1&b=1
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("SumServlet");
+        logger.info("SubServlet");
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/html");
 
         int firstNumber = Integer.parseInt(req.getParameter("a"));
         int secondNumber = Integer.parseInt(req.getParameter("b"));
-        int sum = firstNumber + secondNumber;
-        logger.info("Sum = " + sum);
+        int sub = firstNumber - secondNumber;
+        logger.info("Sub = " + sub);
 
-        out.println("<html><body><h1>" + String.format("%d + %d = %d",firstNumber, secondNumber, sum) + "</h1></body></html>");
+        out.println("<html><body><h1>" + String.format("%d - %d = %d",firstNumber, secondNumber, sub) + "</h1></body></html>");
         out.close();
     }
 }
